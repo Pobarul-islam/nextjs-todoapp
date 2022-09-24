@@ -60,7 +60,34 @@ export default function Home() {
 
   return (
     <div className={style.bg}>
-      
+      <div className={style.container}>
+        <h3 className={style.heading}>Todo App</h3>
+        <form onSubmit={createTodo} className={style.form}>
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className={style.input}
+            type="text"
+            placeholder="Add Todo"
+          />
+          <button className={style.button}>
+            <AiOutlinePlus size={30} />
+          </button>
+        </form>
+        <ul>
+          {todos.map((todo, index) => (
+            <Todo
+              key={index}
+              todo={todo}
+              toggleComplete={toggleComplete}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+        </ul>
+        {todos.length < 1 ? null : (
+          <p className={style.count}>{`You have ${todos.length} todos`}</p>
+        )}
+      </div>
     </div>
   );
 }
