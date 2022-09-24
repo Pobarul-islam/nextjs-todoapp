@@ -46,7 +46,12 @@ export default function Home() {
     return () => unsubscribe();
   }, []);
 
- 
+  // Update todo in firebase
+  const toggleComplete = async (todo) => {
+    await updateDoc(doc(db, "todos", todo.id), {
+      completed: !todo.completed,
+    });
+  };
 
   // Delete todo
   const deleteTodo = async (id) => {
