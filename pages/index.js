@@ -48,7 +48,11 @@ export default function Home() {
 
  
 
-  
+  // Delete todo
+  const deleteTodo = async (id) => {
+    await deleteDoc(doc(db, "todos", id));
+  };
+
   return (
     <div className={style.bg}>
       
