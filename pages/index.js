@@ -15,6 +15,11 @@ const style = {
 };
 
 export default function Home() {
+
+
+
+  // Todo 
+
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
   console.log(input);
@@ -88,6 +93,7 @@ export default function Home() {
           <p className={style.count}>{`You have ${todos.length} todos`}</p>
         )}
       </div>
+     
     </div>
   );
 }
