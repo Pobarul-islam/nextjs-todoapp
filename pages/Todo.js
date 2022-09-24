@@ -14,7 +14,7 @@ const Todo = ({ todo, toggleComplete, deleteTodo }) => {
         />
        
       </div>
-    
+      <button onClick={() => deleteTodo(todo.id)}>{<FaRegTrashAlt />}</button>
     </li>
   );
 };
