@@ -3,13 +3,15 @@ import { UseAuth } from './Context/AuthContext';
 
 
 import Login from './Login';
+import UserDashBoard from './UserDashBoard';
 
 const index = () => {
   const { currentUser } = UseAuth();
   console.log(currentUser)
   return (
     <div>
-      <Login/>
+      {!currentUser && <Login />}
+      {currentUser && <UserDashBoard/>}
     </div>
   );
 };
