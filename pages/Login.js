@@ -4,6 +4,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+    const [isLoggingIn, setIsLoggingIn] = useState(true);
 
   function submitHandler() {
     if (!email || !password) {
@@ -15,7 +16,7 @@ const Login = () => {
   return (
     <div className="flex-1 text-xs sm:text-sm flex flex-col justify-center items-center gap-2 sm:gap-4">
       <h1 className="font-extrabold select-none text-2xl sm:text-4xl uppercase">
-        Login
+        {isLoggingIn ? "Login" : "register"}
       </h1>
       {error && (
         <div className="w-full max-w-[40ch] border-rose-400 border text-center border-solid text-rose-400 py-2">
@@ -42,6 +43,12 @@ const Login = () => {
       >
         <h2 className="relative z-20">SUBMIT</h2>
       </button>
+      <h2
+        className="duration-300 hover:scale-110 cursor-pointer"
+        onClick={() => setIsLoggingIn(!isLoggingIn)}
+      >
+        {!isLoggingIn ? "Login" : "Register"}
+      </h2>
     </div>
   );
 };
