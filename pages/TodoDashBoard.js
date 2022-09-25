@@ -77,7 +77,7 @@ const TodoDashBoard = () => {
             onChange={(e) => setInput(e.target.value)}
             className={style.input}
             type="text"
-            placeholder="Add Todo"
+            placeholder="add your todo..."
           />
           <button className={style.button}>
             <AiOutlinePlus size={30} />
