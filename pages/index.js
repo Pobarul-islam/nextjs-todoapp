@@ -1,8 +1,12 @@
+import React from 'react';
+import Login from './Login';
 
-export default function Home() {
+const index = () => {
   return (
     <div>
-     
+      <Login/>
     </div>
   );
-}
+};
+
+export default index;
